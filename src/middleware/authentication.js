@@ -15,6 +15,7 @@ exports.authentication =  async (ctx, next) => {
     ctx.body = 'Unauthorized'
     return
   }
+  ctx.user = account
   try {
     Token.verify(token, 'peclico')
   } catch (err) {
