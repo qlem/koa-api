@@ -1,4 +1,5 @@
 # KOA API
+Small API with authentication. Buid with [Koa](https://koajs.com/).
 
 ## Create account
 route http://localhost/identification/account/create  
