@@ -2,13 +2,13 @@
 
 POST http://drop.run:3000/identification/account/create
 
-`body = {
+```body = {
   "account": {
     "name": "qlem",
     "email": "qlem@world.net",
     "password": "foo42"
   }
-}`
+}```
 
 POST http://drop.run:3000/identification/
 
