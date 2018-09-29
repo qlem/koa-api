@@ -1,7 +1,7 @@
 # KOA API
 
 ## Create account
-route http://localhost/identification/account/create
+route http://localhost/identification/account/create  
 method POST
 ```
 body = {
@@ -14,7 +14,7 @@ body = {
 ```
 
 ## POST
-route http://localhost:3000/identification/
+route http://localhost:3000/identification/  
 method POST
 ```
 body = {
@@ -30,7 +30,7 @@ response = {
 ```
 
 ## GET 
-route http://localhost:3000/test/auth
+route http://localhost:3000/test/auth  
 method GET
 ```
 headers = {
