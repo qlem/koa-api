@@ -2,7 +2,7 @@
 
 ## Create account
 route http://localhost/identification/account/create  
-method POST
+method **POST**
 ```
 body = {
   "account": {
@@ -11,11 +11,13 @@ body = {
     "password": "foo42"
   }
 }
+
+response = "Account created"
 ```
 
-## POST
+## Log In
 route http://localhost:3000/identification/  
-method POST
+method **POST**
 ```
 body = {
   "user": {
@@ -29,9 +31,9 @@ response = {
 }
 ```
 
-## GET 
+## Test authentication
 route http://localhost:3000/test/auth  
-method GET
+method **GET**
 ```
 headers = {
   "token" = "my.beautiful.token"
