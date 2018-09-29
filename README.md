@@ -1,6 +1,8 @@
-# koa-api
+# KOA API
 
-## POST http://localhost/identification/account/create
+## Create account
+route http://localhost/identification/account/create
+method POST
 ```
 body = {
   "account": {
@@ -11,7 +13,9 @@ body = {
 }
 ```
 
-## POST http://localhost:3000/identification/
+## POST
+route http://localhost:3000/identification/
+method POST
 ```
 body = {
   "user": {
@@ -25,10 +29,13 @@ response = {
 }
 ```
 
-## GET http://localhost:3000/test/auth
+## GET 
+route http://localhost:3000/test/auth
+method GET
 ```
 headers = {
   "token" = "my.beautiful.token"
 }
+
 response = "hello $user.name"
 ```
