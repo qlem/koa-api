@@ -32,7 +32,7 @@ body = {
 }
 
 response = {
-  "token" = "my.beautiful.token"
+  "token": "my.beautiful.token"
 }
 ```
 
@@ -41,7 +41,7 @@ route http://localhost:3000/test/auth
 method **GET**
 ```
 headers = {
-  "token" = "my.beautiful.token"
+  "token": "my.beautiful.token"
 }
 
 response = "hello $user.name"
