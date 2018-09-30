@@ -16,7 +16,7 @@ body = {
 response = {
   "name": "qlem",
   "email": "qlem@world.net",
-  "password": "foo42"
+  "_id": "mybeautifulid42"
 }
 ```
 
