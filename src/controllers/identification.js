@@ -9,13 +9,19 @@ const router = new Router()
 router.post('/account/create', async (ctx, next) => {
   if (!ctx.request.body.account) {
     ctx.status = 400
-    ctx.body = "Missing account"
+    ctx.body = 'Missing account'
   } else {
-    let pw = ctx.request.body.account.password
-    let hash = BCrypt.hashSync(pw, 10)
-    ctx.request.body.account.password = hash
-    await Account.set(ctx.request.body.account)
-    ctx.body = ctx.request.body.account
+    let account = ctx.request.body.account
+    let isPresent = await Account.get({email: account.email})
+    if (isPresent) {
+      ctx.status = 400
+      ctx.body = 'Email already used'
+      return
+    }
+    account.password = BCrypt.hashSync(account.password, 10)
+    await Account.set(account)
+    delete account.password
+    ctx.body = account
   }
 })
 
@@ -24,14 +30,14 @@ router.post('/', async (ctx, next) => {
   if (!ctx.request.body.user || !ctx.request.body.user.email ||
       !ctx.request.body.user.password) {
     ctx.status = 400
-    ctx.body = "Wrong or empty body"
+    ctx.body = 'Wrong or empty body'
     return
   }
   let user = ctx.request.body.user
   let account = await Account.get({email: user.email})
   if (!account) {
     ctx.status = 400
-    ctx.body = "Wrong email"
+    ctx.body = 'Wrong email'
     return
   }
   if (!BCrypt.compareSync(user.password, account.password)) {
