@@ -15,7 +15,7 @@ router.post('/account/create', async (ctx, next) => {
     let hash = BCrypt.hashSync(pw, 10)
     ctx.request.body.account.password = hash
     await Account.set(ctx.request.body.account)
-    ctx.body = 'Account created'
+    ctx.body = ctx.request.body.account
   }
 })
 
