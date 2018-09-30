@@ -13,7 +13,13 @@ body = {
   }
 }
 
-response = "Account created"
+response = {
+  "account": {
+    "name": "qlem",
+    "email": "qlem@world.net",
+    "password": "foo42"
+  }
+}
 ```
 
 ## Log In
