@@ -14,11 +14,9 @@ body = {
 }
 
 response = {
-  "account": {
-    "name": "qlem",
-    "email": "qlem@world.net",
-    "password": "foo42"
-  }
+  "name": "qlem",
+  "email": "qlem@world.net",
+  "password": "foo42"
 }
 ```
 
