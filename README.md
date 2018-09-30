@@ -1,5 +1,5 @@
 # KOA API
-Small API with authentication. Buid with [Koa](https://koajs.com/).
+Small API with authentication. Build with [Koa](https://koajs.com/) and mongo database.
 
 ## Create account
 route http://localhost/identification/account/create  
