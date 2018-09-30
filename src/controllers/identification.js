@@ -27,7 +27,6 @@ router.post('/', async (ctx, next) => {
     ctx.body = "Wrong or empty body"
     return
   }
-
   let user = ctx.request.body.user
   let account = await Account.get({email: user.email})
   if (!account) {
@@ -35,13 +34,11 @@ router.post('/', async (ctx, next) => {
     ctx.body = "Wrong email"
     return
   }
-
   if (!BCrypt.compareSync(user.password, account.password)) {
     ctx.status = 400
     ctx.body = 'Wrong password'
     return
   }
-  
   if (account.token) {
     try {
       Token.verify(account.token, 'peclico')
@@ -59,7 +56,6 @@ router.post('/', async (ctx, next) => {
     }
     return
   }
-
   account.token = Token.sign({user: account.email}, 'peclico', {expiresIn: '365d'})
   await Account.update(account)
   ctx.body = {token: account.token}
