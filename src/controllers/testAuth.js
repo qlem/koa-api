@@ -8,7 +8,7 @@ router.use(Auth.authentication)
 
 // route that test auth middleware
 router.get('/', async (ctx, next) => {
-  ctx.body = 'hello ' + ctx.user.name
+  ctx.body = 'hello ' + ctx.user.firstName
 })
 
 module.exports = router
